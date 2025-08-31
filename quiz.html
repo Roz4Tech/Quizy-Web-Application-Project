@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Quizy Logo.png') }}" alt="Quizy" width="120">
+        </div>
+
+        <!-- Question -->
+        <h2>Question {{ question_index }} of {{ total_questions }}</h2>
+        <p class="question">{{ question.text }}</p>
+
+        <!-- Options -->
+        <form method="post">
+            {% for option in question.options %}
+                <button type="submit" name="option" value="{{ loop.index0 }}" class="btn">
+                    {{ option }}
+                </button>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Quizy Logo.png') }}" alt="Quizy" width="120">
+        </div>
+
+        <!-- Results -->
+        <h2>Your Results</h2>
+        <p class="question">You scored <strong>{{ score }}</strong> out of <strong>{{ total }}</strong></p>
+
+        <!-- Restart Button -->
+        <a href="{{ url_for('index') }}">
+            <button class="btn btn-active">Try Again</button>
+        </a>
+    </div>
+</body>
+</html>
